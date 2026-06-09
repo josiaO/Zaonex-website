@@ -110,7 +110,24 @@ nav {
   padding: 0 32px; height: 70px;
 }
 .logo {
-  display: flex; flex-direction: column; text-decoration: none;
+  display: flex; align-items: center; gap: 12px; text-decoration: none;
+}
+.logo-mark {
+  width: 54px; height: 54px;
+  display: grid; place-items: center;
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.10), rgba(200,168,75,0.12));
+  border: 1px solid rgba(200,168,75,0.18);
+  box-shadow: 0 10px 24px rgba(13,32,24,0.25);
+  padding: 6px;
+  flex-shrink: 0;
+}
+.logo-mark img {
+  width: 100%; height: 100%; object-fit: contain;
+  filter: drop-shadow(0 3px 8px rgba(0,0,0,0.35));
+}
+.logo-copy {
+  display: flex; flex-direction: column;
 }
 .logo-name {
   font-family: var(--display);
@@ -164,6 +181,9 @@ nav {
 @media(max-width:768px) {
   .nav-links { display: none; }
   .hamburger { display: flex; }
+  .logo-mark { width: 48px; height: 48px; }
+  .logo-name { font-size: 1.35rem; }
+  .logo-sub { font-size: 8px; }
 }
 
 /* ═══════════════════════════════════
@@ -623,9 +643,10 @@ footer {
 <!-- ═══════════ NAVBAR ═══════════ -->
 <nav id="navbar">
   <div class="nav-inner">
-    <a class="logo" onclick="showPage('home')">
-      <span class="logo-name">Zaonex</span>
-      <span class="logo-sub">Agritrade Co. Ltd · Tanzania</span>
+    <a class="logo" onclick="showPage('home')" aria-label="Zaonex Agritrade Company Limited homepage">
+      <span class="logo-mark" aria-hidden="true">
+        <img src="Logos/Zaonex_logo1 (1).svg" alt="Zaonex logo">
+      </span>
     </a>
     <ul class="nav-links">
       <li><a onclick="showPage('home')" class="active" id="nav-home">Home</a></li>
@@ -1417,8 +1438,15 @@ footer {
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <div class="logo-name">Zaonex</div>
-        <div class="logo-sub" style="display:block;margin-top:4px;">Agritrade Company Limited</div>
+        <div class="logo" style="margin-bottom: 12px;">
+          <span class="logo-mark" aria-hidden="true">
+            <img src="Logos/Zaonex_logo1 (1).svg" alt="Zaonex logo">
+          </span>
+          <span class="logo-copy">
+            <span class="logo-name">Zaonex</span>
+            <span class="logo-sub">Agritrade Company Limited</span>
+          </span>
+        </div>
         <p class="footer-tagline">Tanzania's trusted agricultural export partner — connecting the finest Tanzanian crops to international markets with quality, integrity, and care.</p>
       </div>
       <div>
